@@ -75,7 +75,7 @@ client.on('message', async msg => {
 
   //FPS
   if (msg.content === `${prefix}fps`) {
-    msg.channel.send("120FPS🎮🤪 + 4K Display", { files: ["./media/rainbow.gif"] });
+    msg.channel.send("120FPS🎮🤪", { files: ["./media/rainbow.gif"] });
   }
 
   //Bulk Delete Messages
