@@ -50,7 +50,7 @@ client.on('message', async msg => {
         { name: '$ping', value: 'PONG!' },
         { name: '$hello', value: 'Hey there!' },
         { name: '$fps', value: 'Surprise!' },
-        { name: '$clear', value: 'Clear the specified amount of messages in the chat.' },
+        { name: '$clear', value: 'Clear the specified amount of messages in the chat.' }
       )
       .setTimestamp()
       .setFooter('PHOENIX');
