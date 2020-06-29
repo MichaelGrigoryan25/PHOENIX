@@ -53,7 +53,7 @@ client.on('message', async msg => {
         { name: '$clear', value: 'Clear the specified amount of messages in the chat.' },
       )
       .setTimestamp()
-      .setFooter('PHOENIX', '');
+      .setFooter('PHOENIX');
     msg.channel.send(helpList);
   }
 
