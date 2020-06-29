@@ -11,12 +11,12 @@ client.once('ready', () => {
     .catch(console.error);
 });
 
-//Reconnect
+//Once Reconnected
 client.once("reconnecting", () => {
   console.log("Reconnecting!");
 });
 
-//Disconnect
+//Once Disconnected
 client.once("disconnect", () => {
   console.log("Disconnect!");
 });
@@ -57,6 +57,7 @@ client.on('message', async msg => {
     msg.channel.send("PONG! " + ping + " ms");
   }
 
+  //Pong
   if (msg.content === `${prefix}pong`) {
     var ping = new Date().getTime() - msg.createdTimestamp;
     msg.channel.send("PING! " + ping + " ms");
@@ -72,6 +73,7 @@ client.on('message', async msg => {
     msg.reply(msg.author.displayAvatarURL());
   }
 
+  //FPS
   if (msg.content === `${prefix}fps`) {
     msg.channel.send("120FPS🎮🤪 + 4K Display", { files: ["./media/rainbow.gif"] });
   }
