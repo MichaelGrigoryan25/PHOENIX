@@ -57,6 +57,11 @@ client.on('message', async msg => {
     msg.channel.send("PONG! " + ping + " ms");
   }
 
+  id (msg.content === `${prefix}pong`) {
+    var ping = new Date().getTime() -msg.createdTimestamp;
+    msg.channel.send("PING! " + ping + " ms");
+  }
+
   //Say Hello
   if (msg.content === `${prefix}hello`) {
     msg.reply('HEY THERE!');
