@@ -32,12 +32,6 @@ client.on('guildMemberAdd', member => {
 client.on('message', async msg => {
   const args = msg.content.split(" ")
 
-  //Ping
-  if (msg.content === `${prefix}ping`) {
-    var ping = new Date().getTime() - msg.createdTimestamp;
-    msg.channel.send("PONG! " + ping + " ms");
-  }
-
   //Help
   if (msg.content === `${prefix}help`) {
     const helpList = new Discord.MessageEmbed()
@@ -53,8 +47,14 @@ client.on('message', async msg => {
         { name: '$clear', value: 'Clear the specified amount of messages in the chat.' }
       )
       .setTimestamp()
-      .setFooter('PHOENIX')
+      .setFooter('PHOENIX');
     msg.channel.send(helpList);
+  }
+
+  //Ping
+  if (msg.content === `${prefix}ping`) {
+    var ping = new Date().getTime() - msg.createdTimestamp;
+    msg.channel.send("PONG! " + ping + " ms");
   }
 
   //Say Hello
