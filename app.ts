@@ -7,7 +7,7 @@ client.once('ready', () => {
   console.log(`Logged in as ${client.user.tag}`);
   // Set the client user's presence
   var number = client.guilds.cache.size;
-  client.user.setPresence({ activity: { name: `$help in ${number} server(s)` }, status: 'online' })
+  client.user.setPresence({ activity: { name: `$help in ${number} server(s)`, type: 'WATCHING' }, status: 'online' })
     .then(console.log)
     .catch(console.error);
 });
@@ -15,7 +15,7 @@ client.once('ready', () => {
 //Update number when the guild is deleted
 client.on('guildDelete', (guild) => {
   var number = client.guilds.cache.size;
-  client.user.setPresence({ activity: { name: `$help in ${number} server(s)` }, status: 'online' })
+  client.user.setPresence({ activity: { name: `$help in ${number} server(s)`, type: 'WATCHING' }, status: 'online' })
     .then(console.log)
     .catch(console.error);
 })
@@ -23,7 +23,7 @@ client.on('guildDelete', (guild) => {
 //Update the number when a guild is added
 client.on('guildCreate', (guild) => {
   var number = client.guilds.cache.size;
-  client.user.setPresence({ activity: { name: `$help in ${number} server(s)` }, status: 'online' })
+  client.user.setPresence({ activity: { name: `$help in ${number} server(s)`, type: 'WATCHING' }, status: 'online' })
     .then(console.log)
     .catch(console.error);
 })
