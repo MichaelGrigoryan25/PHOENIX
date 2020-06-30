@@ -6,11 +6,27 @@ const { prefix, token } = require("./config.json");
 client.once('ready', () => {
   console.log(`Logged in as ${client.user.tag}`);
   // Set the client user's presence
-  client.user.setPresence({ activity: { name: '$help' }, status: 'online' })
+  var number = client.guilds.cache.size;
+  client.user.setPresence({ activity: { name: `$help in ${number} server(s)` }, status: 'online' })
     .then(console.log)
     .catch(console.error);
 });
 
+//Update number when the guild is deleted
+client.on('guildDelete', (guild) => {
+  var number = client.guilds.cache.size;
+  client.user.setPresence({ activity: { name: `$help in ${number} server(s)` }, status: 'online' })
+  .then(console.log)
+  .catch(console.error);
+})
+
+//Update the number when a guild is added
+client.on('guildCreate', (guild) => {
+  var number = client.guilds.cache.size;
+  client.user.setPresence({ activity: { name: `$help in ${number} server(s)` }, status: 'online' })
+  .then(console.log)
+  .catch(console.error);
+})
 //Once Reconnected
 client.once("reconnecting", () => {
   console.log("Reconnecting!");
