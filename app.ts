@@ -39,13 +39,13 @@ client.on('message', async msg => {
     const helpList = new Discord.MessageEmbed()
       .setColor('#ff9302')
       .setTitle('PHOENIX Commands')
-      .setThumbnail('https://raw.githubusercontent.com/MichaelGrigoryan25/PHOENIX/master/logo.jpg')
       .setDescription('Here is the list for all available commands for PHOENIX.')
       .addFields(
         { name: '$help', value: 'List all the available commands.' },
         { name: '$ping or $pong', value: 'PONG! or PING!' },
-        { name: '$kick + mention', value: 'Kick a user from the guild.' },
-        { name: '$clear + number', value: 'Clear the specified amount of messages in the chat.' },
+        { name: '$kick', value: 'Kick a user from the server.' },
+        { name: '$ban', value: 'Ban a user from the server.' },
+        { name: '$clear', value: 'Clear the specified amount of messages in the chat.' },
       )
       .setTimestamp()
       .setFooter('PHOENIX');
