@@ -127,7 +127,7 @@ client.on('message', async msg => {
   //Ban Module
   if (msg.member.hasPermission("BAN_MEMBERS")) {
     if (msg.content.startsWith(`${prefix}ban`)) {
-            // Assuming we mention someone in the message, this will return the user
+      // Assuming we mention someone in the message, this will return the user
       // Read more about mentions over at https://discord.js.org/#/docs/main/master/class/MessageMentions
       const user = msg.mentions.users.first();
       var ping = new Date().getTime() - msg.createdTimestamp;
