@@ -103,7 +103,7 @@ client.on('message', async msg => {
            * There are big differences between a user and a member
            */
           member
-            .kick('Optional reason that will display in the audit logs')
+            .kick('')
             .then(() => {
               // We let the message author know we were able to kick the person
               msg.reply(`Successfully kicked ${user.tag}` + " | " + "Ping time: " + ping);
