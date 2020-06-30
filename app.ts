@@ -8,24 +8,30 @@ client.once('ready', () => {
   // Set the client user's presence
   var number = client.guilds.cache.size;
   client.user.setPresence({ activity: { name: `$help in ${number} server(s)`, type: 'WATCHING' }, status: 'online' })
+    /* To log things
     .then(console.log)
     .catch(console.error);
+    */
 });
 
 //Update number when the guild is deleted
 client.on('guildDelete', (guild) => {
   var number = client.guilds.cache.size;
   client.user.setPresence({ activity: { name: `$help in ${number} server(s)`, type: 'WATCHING' }, status: 'online' })
+    /* To log things
     .then(console.log)
     .catch(console.error);
+    */
 })
 
 //Update the number when a guild is added
 client.on('guildCreate', (guild) => {
   var number = client.guilds.cache.size;
   client.user.setPresence({ activity: { name: `$help in ${number} server(s)`, type: 'WATCHING' }, status: 'online' })
+    /* To log things
     .then(console.log)
     .catch(console.error);
+    */
 })
 //Once Reconnected
 client.once("reconnecting", () => {
