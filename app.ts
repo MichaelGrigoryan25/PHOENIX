@@ -39,7 +39,6 @@ client.on('message', async msg => {
     const helpList = new Discord.MessageEmbed()
       .setColor('#ff9302')
       .setTitle('PHOENIX Commands')
-      .setDescription('Here is the list for all available commands for PHOENIX.')
       .addFields(
         { name: '$help', value: 'List all the available commands.' },
         { name: '$ping or $pong', value: 'PONG! or PING!' },
@@ -47,8 +46,6 @@ client.on('message', async msg => {
         { name: '$ban', value: 'Ban a user from the server.' },
         { name: '$clear', value: 'Clear the specified amount of messages in the chat.' },
       )
-      .setTimestamp()
-      .setFooter('PHOENIX');
     msg.channel.send(helpList);
   }
 
