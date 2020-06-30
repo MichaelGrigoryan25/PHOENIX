@@ -34,7 +34,7 @@ client.on('message', async msg => {
   if(!msg.guild) return;
   const args = msg.content.split(" ")
 
-  //Help
+  //Help Module
   if (msg.content === `${prefix}help`) {
     const helpList = new Discord.MessageEmbed()
       .setColor('#ff9302')
@@ -43,44 +43,33 @@ client.on('message', async msg => {
       .setDescription('Here is the list for all available commands for PHOENIX.')
       .addFields(
         { name: '$help', value: 'List all the available commands.' },
-        { name: '$ping', value: 'PONG!' },
-        { name: '$hello', value: 'Hey there!' },
-        { name: '$fps', value: 'Surprise!' },
-        { name: '$clear', value: 'Clear the specified amount of messages in the chat.' }
+        { name: '$ping or $pong', value: 'PONG! or PING!' },
+        { name: '$kick', value: 'Kick a user from the guild.' },
+        { name: '$clear', value: 'Clear the specified amount of messages in the chat.' },
       )
       .setTimestamp()
       .setFooter('PHOENIX');
     msg.channel.send(helpList);
   }
 
-  //Ping
+  //Ping Module
   if (msg.content === `${prefix}ping`) {
     var ping = new Date().getTime() - msg.createdTimestamp;
     msg.channel.send("PONG! " + ping + " ms");
   }
 
-  //Pong
+  //Pong Module
   if (msg.content === `${prefix}pong`) {
     var ping = new Date().getTime() - msg.createdTimestamp;
     msg.channel.send("PING! " + ping + " ms");
   }
 
-  //Say Hello
-  if (msg.content === `${prefix}hello`) {
-    msg.reply('HEY THERE!');
-  }
-
-  //Show Avatar
+  //Show Avatar Module
   if (msg.content === `${prefix}avatar`) {
     msg.reply(msg.author.displayAvatarURL());
   }
 
-  //FPS
-  if (msg.content === `${prefix}fps`) {
-    msg.channel.send("120FPS🎮🤪", { files: ["./media/rainbow.gif"] });
-  }
-
-  //Bulk Delete Messages
+  //Bulk Delete Messages Module
   if (args[0] == `${prefix}clear`) {
     const deleteCount = parseInt(args[1], 10);
     if (!deleteCount) {
@@ -95,7 +84,7 @@ client.on('message', async msg => {
     }
   }
 
-  //Kick
+  //Kick Module
   if (msg.content.startsWith(`${prefix}kick`)) {
     // Assuming we mention someone in the message, this will return the user
     // Read more about mentions over at https://discord.js.org/#/docs/main/master/class/MessageMentions
