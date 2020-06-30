@@ -28,6 +28,13 @@ client.on('guildMemberAdd', member => {
   channel.send(`Welcome to the server, ${member}` + ". You are a gamer now:video_game:");
 });
 
+//When a member leaves send a message
+client.on('guildMemberRemove', member => {
+  const channel = member.guild.channels.cache.find(ch => ch.name === 'member-log');
+  if (!channel) return;
+  channel.send(`Bye, ${member}` + ". We'll miss you😞");
+});
+
 //Once receive a message
 client.on('message', async msg => {
   // Ignore messages that aren't from a guild
