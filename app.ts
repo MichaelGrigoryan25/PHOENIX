@@ -16,16 +16,16 @@ client.once('ready', () => {
 client.on('guildDelete', (guild) => {
   var number = client.guilds.cache.size;
   client.user.setPresence({ activity: { name: `$help in ${number} server(s)` }, status: 'online' })
-  .then(console.log)
-  .catch(console.error);
+    .then(console.log)
+    .catch(console.error);
 })
 
 //Update the number when a guild is added
 client.on('guildCreate', (guild) => {
   var number = client.guilds.cache.size;
   client.user.setPresence({ activity: { name: `$help in ${number} server(s)` }, status: 'online' })
-  .then(console.log)
-  .catch(console.error);
+    .then(console.log)
+    .catch(console.error);
 })
 //Once Reconnected
 client.once("reconnecting", () => {
