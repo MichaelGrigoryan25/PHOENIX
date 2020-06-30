@@ -117,8 +117,6 @@ client.on('message', async msg => {
               // This is generally due to the bot not being able to kick the member,
               // either due to missing permissions or role hierarchy
               msg.reply('I was unable to kick the member');
-              // Log the error
-              console.error(err);
             });
         } else {
           // The mentioned user isn't in this guild
@@ -160,8 +158,6 @@ client.on('message', async msg => {
               // This is generally due to the bot not being able to kick the member,
               // either due to missing permissions or role hierarchy
               msg.reply('I was unable to ban the member');
-              // Log the error
-              console.error(err);
             });
         } else {
           // The mentioned user isn't in this guild
