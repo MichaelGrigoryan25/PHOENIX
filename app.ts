@@ -45,7 +45,7 @@ client.once("disconnect", () => {
 
 //When a new member joins send a message
 client.on('guildMemberAdd', member => {
-  const channel = member.guild.channels.cache.find(ch => ch.name === 'member-log');
+  const channel = member.guild.channels.cache.find(ch => ch.name === 'logs');
   if (!channel) return;
   channel.send(`Welcome to the server, ${member}` + ". You are a gamer now:video_game:");
 });
