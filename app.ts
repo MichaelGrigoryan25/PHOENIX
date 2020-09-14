@@ -1,3 +1,6 @@
+require("dotenv").config();
+
+
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const { prefix, token } = require("./config.json");
@@ -193,4 +196,4 @@ client.on('message', async msg => {
   }
 });
 
-client.login(token);
+client.login(process.env.DISCORD_TOKEN);
