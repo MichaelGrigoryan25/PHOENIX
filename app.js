@@ -1,5 +1,5 @@
-const Discord = require("discord.js");
-const client = new Discord.Client();
+const { Client, MessageEmbed } = require("discord.js");
+const client = new Client();
 const { prefix, token } = require("./config/config");
 
 //Once ready
@@ -70,7 +70,7 @@ client.on("message", async (msg) => {
 
   //Help Module
   if (msg.content === `${prefix}help`) {
-    const helpList = new Discord.MessageEmbed()
+    const helpList = new MessageEmbed()
       .setColor("#ff9302")
       .setTitle("PHOENIX Commands")
       .addFields(
