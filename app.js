@@ -1,5 +1,5 @@
-const discord = require("discord.js");
-const client = new discord.Client();
+const Discord = require("discord.js");
+const client = new Discord.Client();
 const { prefix, token } = require("./config/config");
 
 //Once ready
@@ -25,14 +25,14 @@ client.on("guildDelete", (guild) => {
 //Update the number when a guild is added
 client.on("guildCreate", (guild) => {
   var number = client.guilds.cache.size;
-  client.user.setPresence({
-    activity: { name: `$help | ${number} server(s)`, type: "WATCHING" },
-    status: "online",
-  });
-  /* To log things
-    .then(console.log)
-    .catch(console.error);
-    */
+  client.user
+    .setPresence({
+      activity: { name: `$help | ${number} server(s)`, type: "WATCHING" },
+      status: "online",
+    })
+
+    .then((response) => console.log(response))
+    .catch((e) => console.error(e));
 });
 //Once Reconnected
 client.once("reconnecting", () => {
