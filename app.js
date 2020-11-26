@@ -1,3 +1,5 @@
+"use strict";
+
 const { Client, MessageEmbed } = require("discord.js");
 const client = new Client();
 const { prefix, token } = require("./config/config");
